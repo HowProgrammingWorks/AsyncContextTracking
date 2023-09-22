@@ -31,7 +31,7 @@ const routing = {
   '/': '<h1>welcome to homepage</h1><hr>',
   '/user': application.user,
   '/user/name': () => application.user.name.toUpperCase(),
-  '/user/age': () => application.user.age,
+  '/user/balance': () => application.user.balance,
   '/api/method1': async (client) => {
     console.log(`${client.id} ${client.method} ${client.url} ${client.status}`);
     return { id: client.id, user: application.user };

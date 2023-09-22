@@ -13,7 +13,7 @@ const routing = {
   '/': '<h1>welcome to homepage</h1><hr>',
   '/user': application.user,
   '/user/name': () => application.user.name.toUpperCase(),
-  '/user/age': () => application.user.age,
+  '/user/balance': () => application.user.balance,
   '/api/method1': async (req, res) => {
     const id = application.asyncLocalStorage.getStore();
     console.log(`${id} ${req.method} ${req.url} ${res.statusCode}`);
