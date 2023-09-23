@@ -2,22 +2,21 @@
 
 const { AsyncResource, executionAsyncId } = require('node:async_hooks');
 
-const asyncResource1 = new AsyncResource(
-  'user', { triggerAsyncId: executionAsyncId(), requireManualDestroy: false },
-);
+const options = { triggerAsyncId: executionAsyncId() };
 
-console.log({ asyncResource1 });
+const resource1 = new AsyncResource('name', options);
+const resource2 = new AsyncResource('name', options);
 
-const asyncResource2 = new AsyncResource(
-  'user', { triggerAsyncId: executionAsyncId(), requireManualDestroy: false },
-);
-
-console.log({ asyncResource2 });
+console.log({ options });
+console.log({ resource1 });
+console.log({ resource2 });
 
 const fn = () => {
   const id = executionAsyncId();
   console.log({ id });
 };
 
-asyncResource1.runInAsyncScope(fn);
-asyncResource2.runInAsyncScope(fn);
+fn();
+resource1.runInAsyncScope(fn);
+resource2.runInAsyncScope(fn);
+fn();
