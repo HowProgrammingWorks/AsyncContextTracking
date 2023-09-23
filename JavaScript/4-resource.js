@@ -2,12 +2,9 @@
 
 const { AsyncResource, executionAsyncId } = require('node:async_hooks');
 
-const options = { triggerAsyncId: executionAsyncId() };
+const resource1 = new AsyncResource('name');
+const resource2 = new AsyncResource('name');
 
-const resource1 = new AsyncResource('name', options);
-const resource2 = new AsyncResource('name', options);
-
-console.log({ options });
 console.log({ resource1 });
 console.log({ resource2 });
 
