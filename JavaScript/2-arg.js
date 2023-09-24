@@ -28,7 +28,6 @@ const types = {
   },
 };
 
-
 http.createServer(async (req, res) => {
   const data = routing[req.url];
   const type = typeof data;
