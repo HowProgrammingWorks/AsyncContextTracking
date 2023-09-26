@@ -35,6 +35,6 @@ const ah = asyncHooks.createHook({
 
 ah.enable();
 
-fs.readFile('./6-hooks.js', async (error, data) => {
+fs.readFile('./8-hooks.js', async (error, data) => {
   log({ length: data.length });
 });
